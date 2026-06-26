@@ -41,6 +41,16 @@ const Hero = () => {
   return (
     <section className="hero-section">
       <div className="size-full mask-wrapper">
+        {/* Fondo desenfocado — mismo video cubriendo toda la pantalla */}
+        <video
+          src="https://res.cloudinary.com/dwxns5ke0/video/upload/v1782362643/Oasis-Demoreel_1_1_1_yq9az5.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="hero-video-bg"
+        />
+        {/* Video principal centrado y nítido */}
         <video
           src="https://res.cloudinary.com/dwxns5ke0/video/upload/v1782362643/Oasis-Demoreel_1_1_1_yq9az5.mp4"
           autoPlay
