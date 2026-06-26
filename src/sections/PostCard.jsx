@@ -66,6 +66,11 @@ const PostCard = () => {
       <div className="pricing-inner">
         {/* Paquete de entrada exclusivo */}
         <div className="entry-card">
+          <img
+            src="https://res.cloudinary.com/dwxns5ke0/image/upload/v1782440968/Snow_white_silyb1.png"
+            alt="Oasis Creativa"
+            className="entry-logo"
+          />
           <span className="entry-tag">Exclusivo · solo para [Cliente]</span>
           <h2>Paquete de Entrada</h2>
           <div className="entry-specs">

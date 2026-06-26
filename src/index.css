@@ -204,6 +204,9 @@ main {
     .entry-card {
       @apply w-full max-w-2xl text-center rounded-3xl p-10 border-2 border-pink/70 bg-black/40 backdrop-blur-md shadow-2xl;
 
+      .entry-logo {
+        @apply w-40 md:w-52 mx-auto mb-4 drop-shadow-lg;
+      }
       .entry-tag {
         @apply inline-block uppercase tracking-wide text-sm font-round-bold text-black bg-pink rounded-full px-4 py-1 mb-5;
       }
