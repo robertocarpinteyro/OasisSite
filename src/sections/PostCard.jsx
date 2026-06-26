@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 
 const tiers = [
@@ -30,15 +31,32 @@ const tiers = [
 
 const PostCard = () => {
   useGSAP(() => {
-    gsap.from('.entry-card', {
-      scrollTrigger: { trigger: '.pricing', start: 'top 75%' },
-      y: 60, opacity: 0, duration: 1, ease: 'power2.out'
-    });
+    gsap.fromTo('.entry-card',
+      { y: 60, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 1, ease: 'power2.out',
+        scrollTrigger: { trigger: '.pricing', start: 'top 80%', once: true }
+      }
+    );
 
-    gsap.from('.tiers-table tbody tr', {
-      scrollTrigger: { trigger: '.tiers-table', start: 'top 80%' },
-      y: 40, opacity: 0, stagger: 0.15, duration: 0.9, ease: 'power2.out'
-    });
+    gsap.fromTo('.tiers-table tbody tr',
+      { y: 40, opacity: 0 },
+      {
+        y: 0, opacity: 1, stagger: 0.15, duration: 0.9, ease: 'power2.out',
+        scrollTrigger: { trigger: '.tiers-table', start: 'top 90%', once: true }
+      }
+    );
+
+    // The pinned sections above shift scroll positions; refresh once everything
+    // (including videos) has settled so these triggers fire at the right spot.
+    const refresh = () => ScrollTrigger.refresh();
+    window.addEventListener('load', refresh);
+    const t = setTimeout(refresh, 1500);
+
+    return () => {
+      window.removeEventListener('load', refresh);
+      clearTimeout(t);
+    };
   })
 
   return (
