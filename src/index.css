@@ -73,16 +73,32 @@ main {
     @apply w-dvw h-dvh relative overflow-hidden;
 
     .scale-out {
-      @apply object-cover md:scale-125 h-full;
+      @apply object-cover h-full;
     }
     .title-logo {
       @apply absolute h-full md:scale-125 top-0 object-cover;
     }
-    .trailer-logo {
-      @apply absolute -bottom-5 w-48 left-1/2 -translate-x-1/2;
+    .hero-side-left,
+    .hero-side-right {
+      @apply absolute top-0 h-full w-[20%] md:w-[28%] z-10 pointer-events-none;
     }
-    .play-img {
-      @apply rounded-full md:size-28 size-20 bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center;
+    .hero-side-left {
+      @apply left-0;
+      background: linear-gradient(to right,
+        rgb(17 17 23 / 1) 0%,
+        rgb(17 17 23 / 0.85) 40%,
+        rgb(17 17 23 / 0.3) 80%,
+        transparent 100%
+      );
+    }
+    .hero-side-right {
+      @apply right-0;
+      background: linear-gradient(to left,
+        rgb(17 17 23 / 1) 0%,
+        rgb(17 17 23 / 0.85) 40%,
+        rgb(17 17 23 / 0.3) 80%,
+        transparent 100%
+      );
     }
     .fake-logo-wrapper {
       @apply absolute z-50 xs:top-[9.5rem] sm:top-[12.8rem] md:top-[8.5rem] 2xl:top-44 3xl:top-48 left-1/2 -translate-x-1/2;
@@ -297,7 +313,8 @@ main {
   }
 
   .hero-section .hero-video {
-    @apply object-cover md:scale-125 h-full w-full;
+    @apply h-full w-full object-cover;
+    object-position: center center;
   }
 }
 

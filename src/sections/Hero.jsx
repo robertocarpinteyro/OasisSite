@@ -49,10 +49,8 @@ const Hero = () => {
           playsInline
           className="scale-out hero-video"
         />
-        <img  src="/images/watch-trailer.png" alt="trailer" className="trailer-logo fade-out" />
-        <div className="play-img fade-out">
-          <img src="/images/play.png" alt="play" className="w-7 ml-1" />
-        </div>
+        <div className="hero-side-left" />
+        <div className="hero-side-right" />
       </div>
 
       <div>
