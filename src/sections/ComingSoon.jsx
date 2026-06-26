@@ -1,19 +1,16 @@
 const ComingSoon = () => {
   return (
     <section className="entrance-message">
-      <div className="h-full col-center gap-10">
-        <img src="/images/logo.webp" alt="logo" className="entrance-logo" />
+      <div className="h-full col-center gap-8 px-6 text-center">
+        <h3 className="gradient-title">
+          Creación de contenido <br /> premium como <br /> marca blanca
+        </h3>
 
-        <div className="text-wrapper">
-          <h3 className="gradient-title">
-            Coming <br /> May 26th <br /> 2026
-          </h3>
-        </div>
-
-        <div className="flex-center gap-10">
-          <img src="/images/ps-logo.svg" className="md:w-32 w-20" />
-          <img src="/images/x-logo.svg" className="md:w-52 w-40" />
-        </div>
+        <img
+          src="https://res.cloudinary.com/dwxns5ke0/image/upload/v1782440968/Snow_white_silyb1.png"
+          alt="Oasis Creativa"
+          className="oasis-logo md:w-72 w-52"
+        />
       </div>
     </section>
   )

@@ -41,8 +41,14 @@ const Hero = () => {
   return (
     <section className="hero-section">
       <div className="size-full mask-wrapper">
-        <img src="/images/hero-bg.webp" alt="background" className="scale-out" />
-        <img src="/images/hero-text.webp" alt="hero-logo" className="title-logo fade-out" />
+        <video
+          src="https://res.cloudinary.com/dwxns5ke0/video/upload/v1782362643/Oasis-Demoreel_1_1_1_yq9az5.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="scale-out hero-video"
+        />
         <img  src="/images/watch-trailer.png" alt="trailer" className="trailer-logo fade-out" />
         <div className="play-img fade-out">
           <img src="/images/play.png" alt="play" className="w-7 ml-1" />

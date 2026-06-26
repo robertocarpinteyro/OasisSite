@@ -20,19 +20,28 @@ const Outro = () => {
 
   return (
     <section className="final-message">
-      <div className="h-full col-center gap-10">
-        <img src="/images/logo.webp" alt="logo" className="md:w-72 w-52" />
+      <div className="h-full col-center gap-12 px-6 text-center">
+        <h3 className="gradient-title">
+          Lancemos tu marca <br /> con producción <br /> de otro nivel.
+        </h3>
 
-        <div>
-          <h3 className="gradient-title">
-            Coming <br /> May 26th <br /> 2026
-          </h3>
+        <div className="flex-center gap-5 flex-wrap">
+          <a href="#" className="cta-pill cta-primary">Agendar reunión</a>
+          <a href="#" className="cta-pill cta-secondary">Solicitar propuesta formal</a>
         </div>
 
-        <div className="flex-center gap-10">
-          <img src="/images/ps-logo.svg" className="md:w-32 w-20" />
-          <img src="/images/x-logo.svg" className="md:w-52 w-40" />
-        </div>
+        <footer className="outro-footer">
+          <img
+            src="https://res.cloudinary.com/dwxns5ke0/image/upload/v1782440968/Snow_white_silyb1.png"
+            alt="Oasis Creativa"
+            className="md:w-48 w-36"
+          />
+          <div className="footer-contact">
+            <a href="mailto:hola@oasiscreativa.com">hola@oasiscreativa.com</a>
+            <a href="https://wa.me/" target="_blank" rel="noreferrer">WhatsApp</a>
+            <a href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+          </div>
+        </footer>
       </div>
     </section>
   )

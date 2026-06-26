@@ -108,36 +108,34 @@ main {
     }
   }
   .jason {
-    @apply relative z-10 lg:ps-40 2xl:ps-80 ps-10 py-40 mt-60 flex lg:flex-row flex-col justify-between gap-5 w-dvw overflow-x-hidden;
+    @apply relative z-10 px-6 md:px-10 py-40 mt-60 flex flex-col items-center text-center gap-8 w-dvw overflow-x-hidden;
 
+    .jason-content {
+      @apply max-w-5xl flex flex-col justify-center items-center;
+    }
     h1 {
-      @apply text-yellow font-long uppercase text-8xl mb-20;
+      @apply text-yellow font-long uppercase md:text-8xl text-6xl mb-8;
     }
     h2 {
-      @apply text-pink md:text-5xl text-3xl mb-7 md:pe-20 pe-10;
+      @apply text-pink md:text-4xl text-2xl mb-6;
     }
-    p {
-      @apply text-white md:text-2xl text-lg md:pe-28 pe-14;
+    > .jason-content > p {
+      @apply text-white md:text-2xl text-lg max-w-3xl mb-16;
     }
-    .jason-1 {
-      @apply bg-yellow lg:h-[80vh] w-auto -translate-x-5;
+    .pillars {
+      @apply grid md:grid-cols-3 grid-cols-1 gap-6 w-full mt-4;
+    }
+    .pillar {
+      @apply border border-white/15 rounded-2xl p-8 text-left bg-white/5 backdrop-blur-sm transition duration-500 hover:border-pink/60;
 
-      img {
-        @apply size-full object-cover [object-position:5%_center] hover:scale-[0.98] transition duration-700 ease-in-out;
+      .pillar-num {
+        @apply font-long text-pink text-3xl block mb-4;
       }
-    }
-    .jason-2 {
-      @apply bg-yellow h-[90vh] w-auto md:mt-36 mt-20 -translate-x-5;
-
-      img {
-        @apply size-full object-cover [object-position:80%_center] hover:scale-x-[0.97] hover:scale-y-[0.98] transition duration-700 ease-in-out;
+      h3 {
+        @apply text-yellow text-2xl mb-3;
       }
-    }
-    .jason-3 {
-      @apply bg-yellow h-[50vh] md:w-[60%] -translate-x-5;
-
-      img {
-        @apply size-full object-cover [object-position:42%_center] hover:scale-[0.97] transition duration-700 ease-in-out;
+      p {
+        @apply text-white/80 text-lg;
       }
     }
   }
@@ -156,8 +154,19 @@ main {
     p {
       @apply text-white md:text-2xl text-lg md:pe-28 pe-14;
     }
-    p:last-of-type {
-      @apply md:hidden block xl:block;
+    .includes-list {
+      @apply grid grid-cols-2 gap-x-8 gap-y-3 my-10 list-none;
+
+      li {
+        @apply text-white md:text-xl text-base relative ps-6;
+      }
+      li::before {
+        content: "·";
+        @apply absolute left-0 text-pink text-2xl leading-none;
+      }
+    }
+    .key-message {
+      @apply text-yellow font-long md:text-3xl text-xl mt-6 md:pe-28 pe-14;
     }
     .lucia-1 {
       @apply bg-yellow lg:h-[80vh] w-auto -translate-x-5;
@@ -182,26 +191,66 @@ main {
     }
   }
   .post-card {
-    @apply relative flex justify-center items-center pb-80 shadow-2xl;
+    @apply relative flex justify-center items-center py-40 shadow-2xl;
 
     .animated-gradient-bg {
       @apply absolute w-full md:h-[200vh] h-[220vh] left-0 xl:-bottom-1/2 md:-bottom-5/6;
     }
+  }
 
-    .post-card-wrapper {
-      @apply xl:mx-56 md:mx-12 mx-5 xl:h-[85vh] md:h-[40vh] h-[30vh] w-full flex justify-center items-center overflow-hidden relative;
+  .pricing-inner {
+    @apply relative z-10 w-full max-w-7xl px-6 flex flex-col justify-center items-center gap-12;
 
-      video {
-        @apply w-full h-full 2xl:scale-x-105 object-cover;
+    .entry-card {
+      @apply w-full max-w-2xl text-center rounded-3xl p-10 border-2 border-pink/70 bg-black/40 backdrop-blur-md shadow-2xl;
+
+      .entry-tag {
+        @apply inline-block uppercase tracking-wide text-sm font-round-bold text-black bg-pink rounded-full px-4 py-1 mb-5;
       }
-
-      img {
-        @apply absolute z-10 w-full h-full;
+      h2 {
+        @apply text-yellow font-long uppercase md:text-5xl text-4xl mb-6;
       }
-
-      button {
-        @apply rounded-full bg-white absolute left-1/2 -translate-x-1/2 md:bottom-16 -bottom-28 md:w-fit w-2/3 px-5 md:px-7 py-4 text-lg;
+      .entry-specs {
+        @apply flex flex-wrap justify-center gap-x-8 gap-y-2 text-white md:text-xl text-lg mb-6;
       }
+      .entry-price {
+        @apply text-pink font-long md:text-6xl text-5xl;
+
+        span {
+          @apply text-white/70 text-2xl font-sans;
+        }
+      }
+    }
+
+    .tiers {
+      @apply grid lg:grid-cols-3 grid-cols-1 gap-6 w-full items-stretch;
+    }
+    .tier-card {
+      @apply relative rounded-3xl p-8 border border-white/15 bg-white/5 backdrop-blur-sm flex flex-col gap-5 transition duration-500 hover:border-white/40;
+
+      h3 {
+        @apply text-yellow font-long uppercase text-3xl;
+      }
+      ul {
+        @apply space-y-2 text-white/85 text-lg flex-1;
+
+        strong {
+          @apply text-white font-round-bold;
+        }
+      }
+      .tier-price {
+        @apply text-pink text-2xl font-round-bold;
+      }
+    }
+    .tier-recommended {
+      @apply border-2 border-pink bg-pink/10 lg:scale-105 shadow-2xl;
+
+      .tier-badge {
+        @apply absolute -top-4 left-1/2 -translate-x-1/2 bg-pink text-black font-round-bold text-sm rounded-full px-4 py-1 whitespace-nowrap;
+      }
+    }
+    .pricing-note {
+      @apply text-white/60 text-center text-base max-w-3xl mt-4;
     }
   }
   .final {
@@ -214,6 +263,35 @@ main {
 
   .final-message {
     @apply absolute w-full h-dvh overflow-hidden z-50 opacity-100;
+
+    .cta-pill {
+      @apply rounded-full px-8 py-4 text-lg font-round-bold transition duration-500;
+    }
+    .cta-primary {
+      @apply bg-pink text-black hover:bg-yellow;
+    }
+    .cta-secondary {
+      @apply border border-white/40 text-white hover:border-pink hover:text-pink;
+    }
+    .outro-footer {
+      @apply flex flex-col justify-center items-center gap-4 mt-8;
+
+      .footer-contact {
+        @apply flex flex-wrap justify-center gap-x-6 gap-y-2 text-white/70 text-base;
+
+        a {
+          @apply transition duration-300 hover:text-pink;
+        }
+      }
+    }
+  }
+
+  .hero-section .hero-video {
+    @apply object-cover md:scale-125 h-full w-full;
+  }
+
+  .entrance-message .oasis-logo {
+    @apply drop-shadow-2xl;
   }
 }
 
