@@ -14,14 +14,13 @@ const Jason = () => {
       }
     }).to('.first-vd', { opacity: 0, duration: 1, ease: 'power1.inOut' });
 
-    gsap.from('.jason .pillar', {
-      scrollTrigger: {
-        trigger: '.jason .pillars',
-        start: 'top 85%',
-        end: 'center center',
-        scrub: 2
-      }, y: 80, opacity: 0, stagger: 0.2, duration: 1, ease: 'power1.inOut'
-    })
+    gsap.fromTo('.jason .pillar',
+      { y: 60, opacity: 0 },
+      {
+        y: 0, opacity: 1, stagger: 0.12, duration: 0.7, ease: 'power2.out',
+        scrollTrigger: { trigger: '.jason .pillars', start: 'top 95%', once: true }
+      }
+    )
   })
 
   return (
