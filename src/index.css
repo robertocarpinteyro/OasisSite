@@ -313,7 +313,7 @@ main {
   }
 
   .hero-section .hero-video {
-    @apply h-full w-full object-cover;
+    @apply h-full w-full object-contain;
     object-position: center center;
   }
 }
