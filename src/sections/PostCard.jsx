@@ -35,9 +35,9 @@ const PostCard = () => {
       y: 60, opacity: 0, duration: 1, ease: 'power2.out'
     });
 
-    gsap.from('.tier-card', {
-      scrollTrigger: { trigger: '.tiers', start: 'top 80%' },
-      y: 80, opacity: 0, stagger: 0.18, duration: 1, ease: 'power2.out'
+    gsap.from('.tiers-table tbody tr', {
+      scrollTrigger: { trigger: '.tiers-table', start: 'top 80%' },
+      y: 40, opacity: 0, stagger: 0.15, duration: 0.9, ease: 'power2.out'
     });
   })
 
@@ -59,22 +59,32 @@ const PostCard = () => {
         </div>
 
         {/* Los 3 niveles */}
-        <div className="tiers">
-          {tiers.map((t) => (
-            <div
-              key={t.name}
-              className={`tier-card${t.recommended ? ' tier-recommended' : ''}`}
-            >
-              {t.recommended && <span className="tier-badge">⭐ Recomendado</span>}
-              <h3>{t.name}</h3>
-              <ul>
-                <li><strong>{t.productions}</strong> producciones/mes</li>
-                <li><strong>{t.reels}</strong> reels</li>
-                <li><strong>{t.photos}</strong> fotos</li>
-              </ul>
-              <p className="tier-price">{t.price}</p>
-            </div>
-          ))}
+        <div className="tiers-table-wrap">
+          <table className="tiers-table">
+            <thead>
+              <tr>
+                <th>Paquete</th>
+                <th>Producciones/mes</th>
+                <th>Reels</th>
+                <th>Fotos</th>
+                <th>Inversión mensual</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tiers.map((t) => (
+                <tr key={t.name} className={t.recommended ? 'row-recommended' : ''}>
+                  <td className="tier-name">
+                    {t.name}
+                    {t.recommended && <span className="tier-flag">⭐ recomendado</span>}
+                  </td>
+                  <td>{t.productions}</td>
+                  <td>{t.reels}</td>
+                  <td>{t.photos}</td>
+                  <td className="tier-invest">{t.price}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         <p className="pricing-note">

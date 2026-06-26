@@ -222,31 +222,41 @@ main {
       }
     }
 
-    .tiers {
-      @apply grid lg:grid-cols-3 grid-cols-1 gap-6 w-full items-stretch;
+    .tiers-table-wrap {
+      @apply w-full overflow-x-auto rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm;
     }
-    .tier-card {
-      @apply relative rounded-3xl p-8 border border-white/15 bg-white/5 backdrop-blur-sm flex flex-col gap-5 transition duration-500 hover:border-white/40;
+    .tiers-table {
+      @apply w-full border-collapse min-w-[640px];
 
-      h3 {
-        @apply text-yellow font-long uppercase text-3xl;
+      thead th {
+        @apply text-left text-white font-round-bold text-base md:text-lg px-6 py-5 border-b border-white/15;
       }
-      ul {
-        @apply space-y-2 text-white/85 text-lg flex-1;
+      tbody td {
+        @apply text-white/85 text-base md:text-lg px-6 py-5 border-b border-white/10 align-middle;
+      }
+      tbody tr:last-child td {
+        @apply border-b-0;
+      }
+      tbody tr {
+        @apply transition duration-300 hover:bg-white/5;
+      }
+      .tier-name {
+        @apply text-white font-round-bold whitespace-nowrap;
+      }
+      .tier-flag {
+        @apply text-yellow italic font-sans text-sm ms-2 whitespace-nowrap;
+      }
+      .tier-invest {
+        @apply text-pink font-round-bold whitespace-nowrap;
+      }
+      .row-recommended {
+        @apply bg-pink/10;
 
-        strong {
-          @apply text-white font-round-bold;
-        }
+        td { @apply border-pink/30; }
+        .tier-name { @apply text-yellow; }
       }
-      .tier-price {
-        @apply text-pink text-2xl font-round-bold;
-      }
-    }
-    .tier-recommended {
-      @apply border-2 border-pink bg-pink/10 lg:scale-105 shadow-2xl;
-
-      .tier-badge {
-        @apply absolute -top-4 left-1/2 -translate-x-1/2 bg-pink text-black font-round-bold text-sm rounded-full px-4 py-1 whitespace-nowrap;
+      .row-recommended:hover {
+        @apply bg-pink/15;
       }
     }
     .pricing-note {
