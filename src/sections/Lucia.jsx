@@ -26,7 +26,7 @@ const Lucia = () => {
 
   return (
     <section className="lucia-life">
-      <div className="flex flex-col gap-5 items-end img-box lg:1/2 ps-10 mt-96">
+      <div className="flex flex-col gap-5 items-end img-box lg:w-1/2 w-full ps-6 lg:mt-96 mt-10">
         <div className="lucia-1">
           <img src="/images/lucia-1.webp" />
         </div>
@@ -36,7 +36,7 @@ const Lucia = () => {
       </div>
 
       <div className="lg:w-1/2 lucia-life-content">
-        <div className="max-w-xl lg:ps-32 ps-10">
+        <div className="max-w-xl lg:ps-32 ps-6 pe-6">
           <h1>Todo Premium</h1>
           <h2>Lo que siempre se incluye en toda producción:</h2>
 

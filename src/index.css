@@ -68,7 +68,7 @@ main {
     @apply fixed top-0 left-0 w-full flex justify-between items-center md:p-16 p-5 z-[100];
   }
   .gradient-title {
-    @apply md:text-[8rem] text-[5rem] font-round-bold !font-extrabold uppercase md:leading-[7rem] leading-[4.5rem] text-center bg-gradient-to-r from-white via-[#4ea0ff] to-[#0b6fdb] bg-clip-text text-transparent;
+    @apply md:text-[8rem] sm:text-[5rem] text-[3.2rem] font-round-bold !font-extrabold uppercase md:leading-[7rem] sm:leading-[4.5rem] leading-[3rem] text-center bg-gradient-to-r from-white via-[#4ea0ff] to-[#0b6fdb] bg-clip-text text-transparent;
   }
   .hero-section {
     @apply w-dvw h-dvh relative overflow-hidden;
@@ -115,7 +115,7 @@ main {
     }
   }
   .jason {
-    @apply relative z-10 px-6 md:px-10 py-40 mt-60 flex flex-col items-center text-center gap-8 w-dvw overflow-x-hidden;
+    @apply relative z-10 px-6 md:px-10 md:py-40 py-20 mt-60 flex flex-col items-center text-center gap-8 w-dvw overflow-x-hidden;
 
     .jason-content {
       @apply max-w-5xl flex flex-col justify-center items-center;
@@ -150,19 +150,19 @@ main {
     @apply relative;
   }
   .lucia-life {
-    @apply relative z-10 py-40 mt-60 flex lg:flex-row flex-col justify-between gap-5 w-dvw overflow-x-hidden;
+    @apply relative z-10 md:py-40 py-20 mt-60 flex lg:flex-row flex-col justify-between gap-5 w-dvw overflow-x-hidden;
 
     h1 {
-      @apply text-yellow font-long uppercase text-8xl mb-20;
+      @apply text-yellow font-long uppercase md:text-8xl text-4xl md:mb-20 mb-8;
     }
     h2 {
-      @apply text-pink md:text-5xl text-3xl mb-7 md:pe-20 pe-10;
+      @apply text-pink md:text-5xl text-2xl mb-7 md:pe-20 pe-0;
     }
     p {
-      @apply text-white md:text-2xl text-lg md:pe-28 pe-14;
+      @apply text-white md:text-2xl text-lg md:pe-28 pe-0;
     }
     .includes-list {
-      @apply grid grid-cols-2 gap-x-8 gap-y-3 my-10 list-none;
+      @apply grid sm:grid-cols-2 grid-cols-1 gap-x-8 gap-y-3 my-10 list-none;
 
       li {
         @apply text-white md:text-xl text-base relative ps-6;
@@ -176,7 +176,7 @@ main {
       @apply text-yellow font-long md:text-3xl text-xl mt-6 md:pe-28 pe-14;
     }
     .lucia-1 {
-      @apply bg-yellow lg:h-[80vh] w-auto -translate-x-5;
+      @apply bg-yellow lg:h-[80vh] lg:w-auto w-[90%] -translate-x-5;
 
       img {
         @apply size-full object-cover [object-position:85%_center] hover:scale-[0.98] transition duration-700 ease-in-out;
@@ -190,7 +190,7 @@ main {
       }
     }
     .lucia-3 {
-      @apply bg-yellow lg:h-[90vh] md:w-[60%] -translate-x-5;
+      @apply bg-yellow lg:h-[90vh] md:w-[60%] w-[90%] -translate-x-5;
 
       img {
         @apply size-full object-cover [object-position:62%_center] hover:scale-x-[0.98] hover:scale-y-[0.99] transition duration-700 ease-in-out;
@@ -198,7 +198,7 @@ main {
     }
   }
   .post-card {
-    @apply relative flex justify-center items-center py-40 shadow-2xl;
+    @apply relative flex justify-center items-center md:py-40 py-20 shadow-2xl;
 
     .animated-gradient-bg {
       @apply absolute w-full md:h-[200vh] h-[220vh] left-0 xl:-bottom-1/2 md:-bottom-5/6;
@@ -221,7 +221,7 @@ main {
         @apply flex flex-wrap justify-center gap-x-8 gap-y-2 text-white md:text-xl text-lg mb-6;
       }
       .entry-price {
-        @apply text-pink font-long md:text-6xl text-5xl;
+        @apply text-pink font-long md:text-6xl text-4xl;
 
         span {
           @apply text-white/70 text-2xl font-sans;
