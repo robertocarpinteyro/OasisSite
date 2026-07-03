@@ -114,7 +114,14 @@ const PostCard = () => {
             cotizamos de forma individual para que pagues exactamente por lo
             que tu marca necesita.
           </p>
-          <a href="#" className="custom-cta">Cotizar mi proyecto</a>
+          <a
+            href="https://wa.me/5212217201999?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20producci%C3%B3n%20a%20medida%20con%20Oasis%20Creativa"
+            target="_blank"
+            rel="noreferrer"
+            className="custom-cta"
+          >
+            Cotizar mi proyecto
+          </a>
         </div>
       </div>
     </section>

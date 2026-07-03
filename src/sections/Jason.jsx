@@ -29,7 +29,7 @@ const Jason = () => {
         <h1>Marca Blanca</h1>
         <h2>Tú al frente. Nosotros, invisibles.</h2>
         <p>
-          Ella vende los servicios como propios; Oasis produce detrás, de forma
+          Tú vendes los servicios como propios; Oasis produce detrás, de forma
           invisible. Tu cliente solo ve tu marca — la producción premium ocurre
           tras bambalinas.
         </p>

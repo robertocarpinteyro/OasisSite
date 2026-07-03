@@ -26,8 +26,22 @@ const Outro = () => {
         </h3>
 
         <div className="flex-center gap-5 flex-wrap">
-          <a href="#" className="cta-pill cta-primary">Agendar reunión</a>
-          <a href="#" className="cta-pill cta-secondary">Solicitar propuesta formal</a>
+          <a
+            href="https://wa.me/5212217201999?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20reuni%C3%B3n%20con%20Oasis%20Creativa"
+            target="_blank"
+            rel="noreferrer"
+            className="cta-pill cta-primary"
+          >
+            Agendar reunión
+          </a>
+          <a
+            href="https://wa.me/5212217201999?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20una%20propuesta%20formal%20de%20Oasis%20Creativa"
+            target="_blank"
+            rel="noreferrer"
+            className="cta-pill cta-secondary"
+          >
+            Solicitar propuesta formal
+          </a>
         </div>
 
         <footer className="outro-footer">
@@ -38,7 +52,7 @@ const Outro = () => {
           />
           <div className="footer-contact">
             <a href="mailto:hola@oasiscreativa.com">hola@oasiscreativa.com</a>
-            <a href="https://wa.me/" target="_blank" rel="noreferrer">WhatsApp</a>
+            <a href="https://wa.me/5212217201999" target="_blank" rel="noreferrer">WhatsApp</a>
             <a href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
           </div>
         </footer>
