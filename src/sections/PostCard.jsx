@@ -4,28 +4,20 @@ import { useGSAP } from "@gsap/react";
 
 const tiers = [
   {
-    name: "Impulso",
-    recommended: true,
-    productions: "4",
-    reels: "12",
-    photos: "100",
-    price: "desde $22,000",
-  },
-  {
-    name: "Referente",
+    name: "Extra",
     recommended: false,
-    productions: "6",
-    reels: "18",
-    photos: "150",
-    price: "desde $30,000",
+    productions: "1",
+    reels: "2",
+    photos: "—",
+    price: "$5,000",
   },
   {
     name: "Producción a Medida",
     recommended: false,
     productions: "por proyecto",
-    reels: "—",
-    photos: "—",
-    price: "desde $48,000",
+    reels: "por proyecto",
+    photos: "por proyecto",
+    price: "cotización individual",
   },
 ];
 
@@ -66,14 +58,17 @@ const PostCard = () => {
       <div className="pricing-inner">
         {/* Paquete de entrada exclusivo */}
         <div className="entry-card">
-          <span className="entry-tag">Exclusivo · solo para [Cliente]</span>
+          <span className="entry-tag">Propuesta exclusiva · Isabela Rossano</span>
           <h2>Paquete de Entrada</h2>
           <div className="entry-specs">
             <span>2 producciones/mes</span>
-            <span>6 reels</span>
-            <span>50 fotos</span>
+            <span>4 reels</span>
           </div>
           <p className="entry-price">$10,000<span>/mes</span></p>
+          <p className="entry-gift">
+            De regalo para Isabel: <strong>1 reel adicional</strong> y
+            <strong> 20 fotografías</strong> sin costo.
+          </p>
         </div>
 
         {/* Los 3 niveles */}
@@ -82,10 +77,10 @@ const PostCard = () => {
             <thead>
               <tr>
                 <th>Paquete</th>
-                <th>Producciones/mes</th>
+                <th>Producciones</th>
                 <th>Reels</th>
                 <th>Fotos</th>
-                <th>Inversión mensual</th>
+                <th>Inversión</th>
               </tr>
             </thead>
             <tbody>
@@ -106,8 +101,10 @@ const PostCard = () => {
         </div>
 
         <p className="pricing-note">
-          Todas las producciones incluyen la calidad premium completa
-          (drone FPV, VFX, color grading, etc.).
+          Isabel, cada producción se entrega con la calidad premium completa —
+          drone FPV, VFX, color grading y audio profesional— sin versiones
+          reducidas. Las producciones a medida se cotizan de forma individual
+          según el alcance de tu proyecto. Precios en pesos, no incluyen IVA.
         </p>
       </div>
     </section>

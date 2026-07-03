@@ -227,6 +227,13 @@ main {
           @apply text-white/70 text-2xl font-sans;
         }
       }
+      .entry-gift {
+        @apply text-white/80 text-base md:text-lg mt-5 max-w-md mx-auto;
+
+        strong {
+          @apply text-yellow font-round-bold;
+        }
+      }
     }
 
     .tiers-table-wrap {

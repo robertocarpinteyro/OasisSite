@@ -22,7 +22,7 @@ const Outro = () => {
     <section className="final-message">
       <div className="h-full col-center gap-12 px-6 text-center">
         <h3 className="gradient-title">
-          Lancemos tu marca <br /> con producción <br /> de otro nivel.
+          Isabel, lancemos <br /> tu marca con producción <br /> de otro nivel.
         </h3>
 
         <div className="flex-center gap-5 flex-wrap">
