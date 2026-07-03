@@ -11,14 +11,6 @@ const tiers = [
     photos: "—",
     price: "$5,000",
   },
-  {
-    name: "Producción a Medida",
-    recommended: false,
-    productions: "por proyecto",
-    reels: "por proyecto",
-    photos: "por proyecto",
-    price: "cotización individual",
-  },
 ];
 
 const PostCard = () => {
@@ -69,6 +61,11 @@ const PostCard = () => {
             De regalo para Isabel: <strong>1 reel adicional</strong> y
             <strong> 20 fotografías</strong> sin costo.
           </p>
+          <p className="entry-bonus">
+            🎁 Bono exclusivo al contratar: incluimos una
+            <strong> landing page para tu embudo de ventas</strong> acompañada de
+            un <strong>reel de ventas</strong> diseñado para convertir.
+          </p>
         </div>
 
         {/* Los 3 niveles */}
@@ -103,9 +100,22 @@ const PostCard = () => {
         <p className="pricing-note">
           Isabel, cada producción se entrega con la calidad premium completa —
           drone FPV, VFX, color grading y audio profesional— sin versiones
-          reducidas. Las producciones a medida se cotizan de forma individual
-          según el alcance de tu proyecto. Precios en pesos, no incluyen IVA.
+          reducidas. Precios en pesos, no incluyen IVA.
         </p>
+
+        {/* Producción a medida, fuera de la tabla */}
+        <div className="custom-card">
+          <span className="custom-tag">Producción a Medida</span>
+          <h3>¿Tu proyecto necesita algo único?</h3>
+          <p>
+            Cuando la visión supera cualquier paquete, la construimos a tu
+            medida. Diseñamos cada producción alrededor de tus objetivos,
+            alcance y narrativa —sin límites de formato ni de ambición— y la
+            cotizamos de forma individual para que pagues exactamente por lo
+            que tu marca necesita.
+          </p>
+          <a href="#" className="custom-cta">Cotizar mi proyecto</a>
+        </div>
       </div>
     </section>
   )

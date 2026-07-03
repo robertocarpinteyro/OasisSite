@@ -234,6 +234,30 @@ main {
           @apply text-yellow font-round-bold;
         }
       }
+      .entry-bonus {
+        @apply text-white/85 text-sm md:text-base mt-5 pt-5 border-t border-pink/30 max-w-md mx-auto;
+
+        strong {
+          @apply text-pink font-round-bold;
+        }
+      }
+    }
+
+    .custom-card {
+      @apply w-full max-w-2xl text-center rounded-3xl md:p-10 p-8 border border-white/15 bg-white/5 backdrop-blur-md shadow-2xl mt-4;
+
+      .custom-tag {
+        @apply inline-block uppercase tracking-wide text-sm font-round-bold text-white/80 border border-white/25 rounded-full px-4 py-1 mb-5;
+      }
+      h3 {
+        @apply text-yellow font-long uppercase md:text-3xl text-2xl mb-5;
+      }
+      p {
+        @apply text-white/80 md:text-lg text-base mb-7;
+      }
+      .custom-cta {
+        @apply inline-block rounded-full px-8 py-4 text-lg font-round-bold bg-pink text-black transition duration-500 hover:bg-yellow;
+      }
     }
 
     .tiers-table-wrap {
@@ -318,9 +342,15 @@ main {
   .hero-section .hero-video {
     @apply relative h-full object-contain z-[1];
     object-position: center center;
-    /* cap width so the vertical video doesn't stretch beyond its natural ratio */
-    max-width: min(100%, calc(100dvh * 9 / 16));
     margin: 0 auto;
+  }
+  /* El clip vertical se limita a su ratio 9:16; el horizontal ocupa el ancho */
+  .hero-section .hero-video[data-orientation="vertical"] {
+    max-width: min(100%, calc(100dvh * 9 / 16));
+  }
+  .hero-section .hero-video[data-orientation="horizontal"] {
+    @apply w-full h-auto;
+    max-height: 100%;
   }
 }
 

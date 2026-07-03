@@ -1,11 +1,32 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useState } from "react";
 
 import { useMaskSettings } from '../../constants';
 import ComingSoon from "./ComingSoon"
 
+// Secuencia de clips del fondo: primero el vertical, luego el horizontal.
+const HERO_CLIPS = [
+  {
+    src: "https://res.cloudinary.com/dxcr9utre/video/upload/v1783103607/reel1_d1nzzx.mp4",
+    orientation: "vertical",
+  },
+  {
+    src: "https://res.cloudinary.com/dxcr9utre/video/upload/v1783103447/reel2_rmmept.mp4",
+    orientation: "horizontal",
+  },
+];
+
 const Hero = () => {
   const { initialMaskPos, initialMaskSize, maskPos, maskSize } = useMaskSettings();
+
+  const [clipIndex, setClipIndex] = useState(0);
+  const clip = HERO_CLIPS[clipIndex];
+
+  // Al terminar un clip, avanza al siguiente (y vuelve al inicio en bucle).
+  const handleEnded = () => {
+    setClipIndex((i) => (i + 1) % HERO_CLIPS.length);
+  };
 
   useGSAP(() => {
     gsap.set('.mask-wrapper', {
@@ -41,22 +62,24 @@ const Hero = () => {
   return (
     <section className="hero-section">
       <div className="size-full mask-wrapper">
-        {/* Fondo desenfocado — mismo video cubriendo toda la pantalla */}
+        {/* Fondo desenfocado — mismo clip cubriendo toda la pantalla */}
         <video
-          src="https://res.cloudinary.com/dwxns5ke0/video/upload/v1782362643/Oasis-Demoreel_1_1_1_yq9az5.mp4"
+          key={`bg-${clipIndex}`}
+          src={clip.src}
           autoPlay
           muted
-          loop
           playsInline
           className="hero-video-bg"
         />
-        {/* Video principal centrado y nítido */}
+        {/* Video principal centrado y nítido; onEnded encadena al siguiente */}
         <video
-          src="https://res.cloudinary.com/dwxns5ke0/video/upload/v1782362643/Oasis-Demoreel_1_1_1_yq9az5.mp4"
+          key={`main-${clipIndex}`}
+          src={clip.src}
           autoPlay
           muted
-          loop
           playsInline
+          onEnded={handleEnded}
+          data-orientation={clip.orientation}
           className="scale-out hero-video"
         />
         <div className="hero-side-left" />
