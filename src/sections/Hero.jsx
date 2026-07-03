@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 import { useMaskSettings } from '../../constants';
 import ComingSoon from "./ComingSoon"
@@ -19,6 +20,9 @@ const HERO_CLIPS = [
 
 const Hero = () => {
   const { initialMaskPos, initialMaskSize, maskPos, maskSize } = useMaskSettings();
+  // En móvil el logo (horizontal) no encaja como máscara sobre una pantalla
+  // vertical y termina ocultando el video. Ahí mostramos el video directo.
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   const [clipIndex, setClipIndex] = useState(0);
   const clip = HERO_CLIPS[clipIndex];
@@ -29,10 +33,15 @@ const Hero = () => {
   };
 
   useGSAP(() => {
-    gsap.set('.mask-wrapper', {
-      maskPosition: initialMaskPos,
-      maskSize: initialMaskSize,
-    });
+    if (isMobile) {
+      // Sin máscara: el video se ve completo desde el inicio.
+      gsap.set('.mask-wrapper', { maskImage: 'none', webkitMaskImage: 'none' });
+    } else {
+      gsap.set('.mask-wrapper', {
+        maskPosition: initialMaskPos,
+        maskSize: initialMaskSize,
+      });
+    }
 
     gsap.set('.mask-logo', { marginTop: '-100vh', opacity: 0 });
 
@@ -48,16 +57,20 @@ const Hero = () => {
       }
     })
 
-    tl
-      .to('.fade-out', { opacity: 0, ease: 'power1.inOut' })
-      .to('.scale-out', { scale: 1, ease: 'power1.inOut' })
-      .to('.mask-wrapper', { maskSize, ease: 'power1.inOut' }, '<')
-      .to('.mask-wrapper', { opacity: 0 })
+    tl.to('.fade-out', { opacity: 0, ease: 'power1.inOut' })
+
+    // El revelado por logo solo aplica en desktop/tablet.
+    if (!isMobile) {
+      tl.to('.scale-out', { scale: 1, ease: 'power1.inOut' })
+        .to('.mask-wrapper', { maskSize, ease: 'power1.inOut' }, '<');
+    }
+
+    tl.to('.mask-wrapper', { opacity: 0 })
       .to('.overlay-logo', { opacity: 1, onComplete: () => {
         gsap.to('.overlay-logo', { opacity: 0 });
       } }, '<')
       .to('.entrance-message', { duration: 1, ease: 'power1.inOut', maskImage: 'radial-gradient(circle at 50% 0vh, black 50%, transparent 100%)' }, '<')
-  });
+  }, { dependencies: [isMobile] });
 
   return (
     <section className="hero-section">

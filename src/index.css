@@ -429,20 +429,16 @@ main {
   max-width: 260px;
   animation: preloader-pulse 1.8s ease-in-out infinite;
 }
-.preloader-bar {
-  width: 60vw;
-  max-width: 220px;
-  height: 3px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
-  overflow: hidden;
+.preloader-spinner {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-top-color: #0b6fdb;
+  animation: preloader-spin 0.8s linear infinite;
 }
-.preloader-bar span {
-  display: block;
-  height: 100%;
-  background: #0b6fdb;
-  border-radius: 999px;
-  transition: width 0.3s ease;
+@keyframes preloader-spin {
+  to { transform: rotate(360deg); }
 }
 @keyframes preloader-pulse {
   0%, 100% { opacity: 0.55; transform: scale(0.98); }

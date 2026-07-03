@@ -1,7 +1,6 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 
-import { PreloadProvider } from './PreloadContext';
 import Preloader from './sections/Preloader';
 import Hero from './sections/Hero';
 import FirstVideo from './sections/FirstVideo';
@@ -16,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   return (
-    <PreloadProvider>
+    <>
       <Preloader />
       <main>
         <Hero />
@@ -31,7 +30,7 @@ const App = () => {
         <Final />
         <Outro />
       </main>
-    </PreloadProvider>
+    </>
   )
 }
 
