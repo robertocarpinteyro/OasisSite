@@ -83,14 +83,14 @@ const PostCard = () => {
             <tbody>
               {tiers.map((t) => (
                 <tr key={t.name} className={t.recommended ? 'row-recommended' : ''}>
-                  <td className="tier-name">
+                  <td className="tier-name" data-label="Paquete">
                     {t.name}
                     {t.recommended && <span className="tier-flag">⭐ recomendado</span>}
                   </td>
-                  <td>{t.productions}</td>
-                  <td>{t.reels}</td>
-                  <td>{t.photos}</td>
-                  <td className="tier-invest">{t.price}</td>
+                  <td data-label="Producciones">{t.productions}</td>
+                  <td data-label="Reels">{t.reels}</td>
+                  <td data-label="Fotos">{t.photos}</td>
+                  <td className="tier-invest" data-label="Inversión">{t.price}</td>
                 </tr>
               ))}
             </tbody>

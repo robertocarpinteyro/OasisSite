@@ -26,7 +26,7 @@ const Lucia = () => {
 
   return (
     <section className="lucia-life">
-      <div className="flex flex-col gap-5 items-end img-box lg:w-1/2 w-full ps-6 lg:mt-96 mt-10">
+      <div className="flex flex-col gap-5 lg:items-end items-center img-box lg:w-1/2 w-full lg:ps-6 px-0 lg:mt-96 mt-10">
         <div className="lucia-1">
           <img src="/images/lucia-1.webp" />
         </div>

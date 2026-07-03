@@ -100,7 +100,7 @@ main {
   }
   .first-vd-wrapper {
     .first-vd {
-      @apply size-full object-cover md:[object-position:50%_center] [object-position:75%_center];
+      @apply size-full object-cover [object-position:50%_center];
     }
   }
   .entrance-message {
@@ -176,24 +176,24 @@ main {
       @apply text-yellow font-long md:text-3xl text-xl mt-6 md:pe-28 pe-14;
     }
     .lucia-1 {
-      @apply bg-yellow lg:h-[80vh] lg:w-auto w-[90%] -translate-x-5;
+      @apply bg-yellow lg:h-[80vh] lg:w-auto w-[88%] mx-auto rounded-xl overflow-hidden lg:rounded-none lg:-translate-x-5 translate-x-0;
 
       img {
-        @apply size-full object-cover [object-position:85%_center] hover:scale-[0.98] transition duration-700 ease-in-out;
+        @apply size-full object-cover lg:[object-position:85%_center] [object-position:50%_center] hover:scale-[0.98] transition duration-700 ease-in-out;
       }
     }
     .lucia-2 {
-      @apply bg-yellow lg:h-[60vh] lg:w-[70%] w-[80%] md:my-36 my-20 lg:-translate-x-5 translate-x-5;
+      @apply bg-yellow lg:h-[60vh] lg:w-[70%] w-[88%] mx-auto md:my-36 my-14 rounded-xl overflow-hidden lg:rounded-none lg:-translate-x-5 translate-x-0;
 
       img {
         @apply size-full object-cover [object-position:50%_center] hover:scale-x-[0.98] hover:scale-y-[0.98] transition duration-700 ease-in-out;
       }
     }
     .lucia-3 {
-      @apply bg-yellow lg:h-[90vh] md:w-[60%] w-[90%] -translate-x-5;
+      @apply bg-yellow lg:h-[90vh] md:w-[60%] w-[88%] mx-auto rounded-xl overflow-hidden lg:rounded-none lg:-translate-x-5 translate-x-0;
 
       img {
-        @apply size-full object-cover [object-position:62%_center] hover:scale-x-[0.98] hover:scale-y-[0.99] transition duration-700 ease-in-out;
+        @apply size-full object-cover lg:[object-position:62%_center] [object-position:50%_center] hover:scale-x-[0.98] hover:scale-y-[0.99] transition duration-700 ease-in-out;
       }
     }
   }
@@ -261,10 +261,10 @@ main {
     }
 
     .tiers-table-wrap {
-      @apply w-full overflow-x-auto rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm;
+      @apply w-full md:overflow-x-auto rounded-2xl md:border border-white/10 md:bg-white/5 md:backdrop-blur-sm;
     }
     .tiers-table {
-      @apply w-full border-collapse min-w-[640px];
+      @apply w-full border-collapse md:min-w-[640px];
 
       thead th {
         @apply text-left text-white font-round-bold text-base md:text-lg px-6 py-5 border-b border-white/15;
@@ -277,6 +277,26 @@ main {
       }
       tbody tr {
         @apply transition duration-300 hover:bg-white/5;
+      }
+
+      /* En móvil, cada fila se apila como tarjeta con etiquetas */
+      @media (max-width: 767px) {
+        thead {
+          @apply hidden;
+        }
+        tbody tr {
+          @apply block rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm mb-4 p-2;
+        }
+        tbody td {
+          @apply flex justify-between items-center gap-4 text-right px-4 py-3 border-b border-white/10;
+        }
+        tbody td::before {
+          content: attr(data-label);
+          @apply text-white/55 text-sm font-round-bold text-left;
+        }
+        tbody tr:last-child td:last-child {
+          @apply border-b-0;
+        }
       }
       .tier-name {
         @apply text-white font-round-bold whitespace-nowrap;
@@ -385,6 +405,48 @@ main {
 
 .animated-gradient-bg {
   background: linear-gradient(135deg, #0a1a33 0%, #0b6fdb 100%);
+}
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background: #0d0d14;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+.preloader-hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.preloader-logo {
+  width: 60vw;
+  max-width: 260px;
+  animation: preloader-pulse 1.8s ease-in-out infinite;
+}
+.preloader-bar {
+  width: 60vw;
+  max-width: 220px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+.preloader-bar span {
+  display: block;
+  height: 100%;
+  background: #0b6fdb;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+@keyframes preloader-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1.02); }
 }
 
 .jason-content {
